@@ -63,9 +63,8 @@ class _Tela1State extends State<Tela1> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start, // Alinha à esquerda
+          crossAxisAlignment: CrossAxisAlignment.start, 
           children: [
-            // Linha para X
             Row(
               children: [
                 Text(
@@ -80,7 +79,6 @@ class _Tela1State extends State<Tela1> {
               ],
             ),
             SizedBox(height: 20),
-            // Linha para Y
             Row(
               children: [
                 Text(
@@ -95,14 +93,21 @@ class _Tela1State extends State<Tela1> {
               ],
             ),
             SizedBox(height: 40),
-            ElevatedButton(
-              onPressed: _calcular,
-              child: Text('Calcular'),
-            ),
-            SizedBox(height: 20),
-            Text(
-              'Resultado: $resultado',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center, 
+                children: [
+                  ElevatedButton(
+                    onPressed: _calcular,
+                    child: Text('Calcular'),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    'Resultado: $resultado',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
@@ -112,7 +117,7 @@ class _Tela1State extends State<Tela1> {
 }
 
 class Tela2 extends StatefulWidget {
-  final String tipo; // 'x' ou 'y'
+  final String tipo; 
 
   Tela2({required this.tipo});
 
@@ -125,7 +130,7 @@ class _Tela2State extends State<Tela2> {
 
   void _salvar() {
     double valor = double.tryParse(_controller.text) ?? 0.0;
-    Navigator.pop(context, valor); // Retorna o valor para a Tela 1
+    Navigator.pop(context, valor); 
   }
 
   @override
@@ -138,11 +143,11 @@ class _Tela2State extends State<Tela2> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center, // Centraliza verticalmente
-            crossAxisAlignment: CrossAxisAlignment.center, // Centraliza horizontalmente
+            mainAxisAlignment: MainAxisAlignment.center, 
+            crossAxisAlignment: CrossAxisAlignment.center, 
             children: [
               SizedBox(
-                width: 300, // Largura fixa para o campo de texto
+                width: 300, 
                 child: TextField(
                   controller: _controller,
                   decoration: InputDecoration(
