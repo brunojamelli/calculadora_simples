@@ -65,24 +65,36 @@ class _Tela1State extends State<Tela1> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Valor de X: $x',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 10),
-            Text(
-              'Valor de Y: $y',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            // Linha para X
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () => _navegarParaTela2(context, 'x'),
+                  child: Text('Calcular X'),
+                ),
+                SizedBox(width: 20),
+                Text(
+                  'X: $x',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
             SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () => _navegarParaTela2(context, 'x'),
-              child: Text('Calcular X'),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () => _navegarParaTela2(context, 'y'),
-              child: Text('Calcular Y'),
+            // Linha para Y
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () => _navegarParaTela2(context, 'y'),
+                  child: Text('Calcular Y'),
+                ),
+                SizedBox(width: 20),
+                Text(
+                  'Y: $y',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
             SizedBox(height: 40),
             ElevatedButton(
