@@ -65,32 +65,38 @@ class _Tela1State extends State<Tela1> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start, 
           children: [
-            Row(
-              children: [
-                Text(
-                  'X: $x',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(width: 20),
-                ElevatedButton(
-                  onPressed: () => _navegarParaTela2(context, 'x'),
-                  child: Text('Calcular X'),
-                ),
-              ],
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center, 
+                children: [
+                  Text(
+                    'X: $x',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(width: 20),
+                  ElevatedButton(
+                    onPressed: () => _navegarParaTela2(context, 'x'),
+                    child: Text('Calcular X'),
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: 20),
-            Row(
-              children: [
-                Text(
-                  'Y: $y',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(width: 20),
-                ElevatedButton(
-                  onPressed: () => _navegarParaTela2(context, 'y'),
-                  child: Text('Calcular Y'),
-                ),
-              ],
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center, 
+                children: [
+                  Text(
+                    'Y: $y',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(width: 20),
+                  ElevatedButton(
+                    onPressed: () => _navegarParaTela2(context, 'y'),
+                    child: Text('Calcular Y'),
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: 40),
             Center(
