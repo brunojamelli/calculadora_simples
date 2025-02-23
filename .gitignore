@@ -1,0 +1,60 @@
+# Arquivos e pastas gerados pelo Flutter e Dart
+.dart_tool/
+.idea/
+.vscode/
+*.iml
+*.log
+*.lock
+.packages
+.pub-cache/
+.pub/
+build/
+flutter_export_environment.sh
+
+# Pastas de build específicas para cada plataforma
+/android/
+/ios/
+/web/
+/linux/
+/macos/
+/windows/
+
+# Arquivos de configuração local
+.env
+.env.*
+.env.local
+
+# Dependências do Flutter
+/pubspec.lock
+/.flutter-plugins
+/.flutter-plugins-dependencies
+/.metadata
+
+# Arquivos gerados pelo Flutter
+/Generated.xcconfig
+/Flutter.podspec
+/Flutter/App.framework/
+/Flutter/Flutter.framework/
+/Flutter/GeneratedPluginRegistrant.*
+
+# Arquivos de usuário específicos do IDE
+**/.DS_Store
+**/*.swp
+**/*.swo
+
+# Arquivos de teste
+/coverage/
+
+# Arquivos de configuração do Firebase (se aplicável)
+**/firebase_options.dart
+**/google-services.json
+**/GoogleService-Info.plist
+
+# Arquivos de configuração do Fastlane (se aplicável)
+/fastlane/report.xml
+/fastlane/Preview.html
+/fastlane/screenshots
+/fastlane/test_output
+
+# Arquivos de configuração do Android Studio
+/local.properties
