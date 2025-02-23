@@ -63,43 +63,41 @@ class _Tela1State extends State<Tela1> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start, // Alinha à esquerda
           children: [
             // Linha para X
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
-                  onPressed: () => _navegarParaTela2(context, 'x'),
-                  child: Text('Calcular X'),
-                ),
-                SizedBox(width: 20),
                 Text(
                   'X: $x',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(width: 20),
+                ElevatedButton(
+                  onPressed: () => _navegarParaTela2(context, 'x'),
+                  child: Text('Calcular X'),
                 ),
               ],
             ),
             SizedBox(height: 20),
             // Linha para Y
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
-                  onPressed: () => _navegarParaTela2(context, 'y'),
-                  child: Text('Calcular Y'),
-                ),
-                SizedBox(width: 20),
                 Text(
                   'Y: $y',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(width: 20),
+                ElevatedButton(
+                  onPressed: () => _navegarParaTela2(context, 'y'),
+                  child: Text('Calcular Y'),
                 ),
               ],
             ),
             SizedBox(height: 40),
             ElevatedButton(
               onPressed: _calcular,
-              child: Text('Calcular Soma'),
+              child: Text('Calcular'),
             ),
             SizedBox(height: 20),
             Text(
@@ -136,24 +134,31 @@ class _Tela2State extends State<Tela2> {
       appBar: AppBar(
         title: Text('Digite ${widget.tipo.toUpperCase()}'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: _controller,
-              decoration: InputDecoration(
-                labelText: 'Digite ${widget.tipo.toUpperCase()}',
-                border: OutlineInputBorder(),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center, // Centraliza verticalmente
+            crossAxisAlignment: CrossAxisAlignment.center, // Centraliza horizontalmente
+            children: [
+              SizedBox(
+                width: 300, // Largura fixa para o campo de texto
+                child: TextField(
+                  controller: _controller,
+                  decoration: InputDecoration(
+                    labelText: 'Digite ${widget.tipo.toUpperCase()}',
+                    border: OutlineInputBorder(),
+                  ),
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                ),
               ),
-              keyboardType: TextInputType.numberWithOptions(decimal: true),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _salvar,
-              child: Text('Salvar'),
-            ),
-          ],
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _salvar,
+                child: Text('Salvar'),
+              ),
+            ],
+          ),
         ),
       ),
     );
